@@ -27,9 +27,8 @@ Presentation/Oral Feedback: Tuesday/Thursday May 11/13(20 min per group).
    - Use Cases (only one fully dressed).
    - Domain Model.
    - Data Model (ERD)
-   - Data Dictionary.
-   - SSDs
-   - At least one Sequence-diagram.
+   - Data Dictionary. 
+   - SSDs : At least one Sequence-diagram.
    - The Architecture (layered) in a diagram.
    - The (final) Design Class Diagram.
 6. Also explain how patterns are applied shortly – for example GRASP, Singleton, Dao, Strategy but always discuss a pattern together with a code example from with-in the project!
@@ -49,3 +48,47 @@ Presentation/Oral Feedback: Tuesday/Thursday May 11/13(20 min per group).
   > See the document: guidelines for report writing.pdf
 
 - Finally, you must prepare and make a short presentation (PowerPoint) of the designed solution – this must be ready for the 11th of May.
+
+
+
+
+
+# Time scheduel
+
+| Monday(26th) | 27th            | 28th | 29th                          | 30th | 1st         | 2nd  | 3rd  | 4th         | 5th  |
+| ------------ | --------------- | ---- | ----------------------------- | ---- | ----------- | ---- | ---- | ----------- | ---- |
+| Vision       | Data Dictionary |      | SSDs                          | DCD  | Coding part |      |      | Report part |      |
+| Use case     | ERD             |      | Architecture(tommy’s week 09) |      |             |      |      |             |      |
+|              |                 |      |                               |      |             |      |      |             |      |
+
+
+
+
+
+# Unify process
+
+| Inception               | Elaboration       | Construction          | Transition |
+| ----------------------- | ----------------- | --------------------- | ---------- |
+| Feasibility study       |                   | Program the functions | Test       |
+| - Decision Stop or Go   | Refile the vision | Create a user         | Deploy     |
+| - Estimations           | Core architecture |                       |            |
+| - vision                | Use case          |                       |            |
+| - Environment           |                   |                       |            |
+| - choose language :java |                   |                       |            |
+
+
+
+#### Feasibility study 可行性研究
+
+* Decision Stop or Go
+* Estimations 预估 ( how many resourse we have )
+* Vision ( a short sentance to say what we are building / a pic for the programming , functional word , becareful do not use the contents which you can never finish it. )
+* Environment 
+* Programming laugage choice
+
+
+
+
+
+# Use case 
+
