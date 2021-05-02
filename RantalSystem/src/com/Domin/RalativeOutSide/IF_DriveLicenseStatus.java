@@ -2,10 +2,10 @@ package com.Domin.RalativeOutSide;
 
 /**
  * @ author Fei Gu
- * @ create 2021-05-01-07.58
+ * @ create 2021-05-02-11.28
  * @ grade CS20_EASV_SØNDERBORG
  * @ Description
  * @ Version
  */
-public class PostSystem {
+public interface IF_DriveLicenseStatus {
 }

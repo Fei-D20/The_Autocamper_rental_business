@@ -1,11 +1,11 @@
-package com.Domin.User;
+package com.Domin.Product;
 
 /**
  * @ author Fei Gu
- * @ create 2021-05-01-07.51
+ * @ create 2021-05-02-11.18
  * @ grade CS20_EASV_SØNDERBORG
  * @ Description
  * @ Version
  */
-public class User {
+public interface IF_Rental {
 }

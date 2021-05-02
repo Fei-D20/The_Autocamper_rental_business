@@ -2,10 +2,10 @@ package com.Domin.User;
 
 /**
  * @ author Fei Gu
- * @ create 2021-05-01-07.52
+ * @ create 2021-05-02-11.07
  * @ grade CS20_EASV_SØNDERBORG
  * @ Description
  * @ Version
  */
-public class Admin implements IF_Administrator{
+public interface IF_Client extends IF_User{
 }

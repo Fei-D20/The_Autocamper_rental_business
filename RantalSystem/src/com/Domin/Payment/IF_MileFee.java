@@ -2,10 +2,10 @@ package com.Domin.Payment;
 
 /**
  * @ author Fei Gu
- * @ create 2021-05-01-07.56
+ * @ create 2021-05-02-11.22
  * @ grade CS20_EASV_SØNDERBORG
  * @ Description
  * @ Version
  */
-public class Payment {
+public interface IF_MileFee extends IF_CamperFee{
 }
