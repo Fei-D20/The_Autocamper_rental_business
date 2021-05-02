@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.Domin.User</OriginalElement>
+  <nodes>
+    <node x="336.25" y="566.0">com.Domin.User.Client</node>
+    <node x="105.125" y="765.0">com.Domin.User.Admin</node>
+    <node x="0.0" y="383.0">com.Domin.User.IF_Administrator</node>
+    <node x="212.0" y="283.0">com.Domin.User.User</node>
+    <node x="212.0" y="0.0">com.Domin.User.IF_User</node>
+    <node x="480.0" y="383.0">com.Domin.User.IF_Client</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.Domin.User.Client" target="com.Domin.User.IF_Client">
+      <point x="67.5" y="-238.5" />
+      <point x="538.75" y="541.0" />
+      <point x="544.5" y="541.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="com.Domin.User.IF_Client" target="com.Domin.User.IF_User">
+      <point x="0.0" y="-16.5" />
+      <point x="544.5" y="258.0" />
+      <point x="429.0" y="258.0" />
+      <point x="93.0" y="116.5" />
+    </edge>
+    <edge source="com.Domin.User.Admin" target="com.Domin.User.IF_Administrator">
+      <point x="-41.25" y="-39.5" />
+      <point x="146.375" y="541.0" />
+      <point x="96.0" y="541.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="com.Domin.User.IF_Administrator" target="com.Domin.User.IF_User">
+      <point x="0.0" y="-16.5" />
+      <point x="96.0" y="258.0" />
+      <point x="243.0" y="258.0" />
+      <point x="-93.0" y="116.5" />
+    </edge>
+    <edge source="com.Domin.User.Admin" target="com.Domin.User.User">
+      <point x="41.25" y="-39.5" />
+      <point x="228.875" y="541.0" />
+      <point x="274.0" y="541.0" />
+      <point x="-62.0" y="116.5" />
+    </edge>
+    <edge source="com.Domin.User.User" target="com.Domin.User.IF_User">
+      <point x="-62.0" y="-116.5" />
+      <point x="274.0" y="258.0" />
+      <point x="305.0" y="258.0" />
+      <point x="-31.0" y="116.5" />
+    </edge>
+    <edge source="com.Domin.User.Client" target="com.Domin.User.User">
+      <point x="-67.5" y="-238.5" />
+      <point x="403.75" y="541.0" />
+      <point x="398.0" y="541.0" />
+      <point x="62.0" y="116.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8278457196613358" x="304.5" y="521.5" />
+  <SelectedNodes>
+    <node>com.Domin.User.IF_Client</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -8,4 +8,6 @@ package com.Domin.Payment.CamperFee;
  * @ Version
  */
 public interface IF_CamperFee {
+    public double calculateCamperFee(int weekAmount, double milefee, double fuelMissing, PriceCategories priceCategories, Season season);
+
 }

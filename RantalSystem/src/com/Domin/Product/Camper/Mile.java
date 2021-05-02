@@ -9,22 +9,25 @@ import java.util.Objects;
  * @ Description
  * @ Version
  */
-public class Mile {
+public class Mile implements IF_Mile{
     private final double FREE_MILEAGE = 1000;
     private double mileAmount;
-    private String unit;
+    private final String UNIT = "Km";
 
 
     public Mile() {
     }
 
-    public Mile(double mileAmount, String unit) {
+    public Mile(double mileAmount) {
         this.mileAmount = mileAmount;
-        this.unit = unit;
     }
 
     public double getFREE_MILEAGE() {
         return FREE_MILEAGE;
+    }
+
+    public String getUNIT() {
+        return UNIT;
     }
 
     public double getMileAmount() {
@@ -35,25 +38,17 @@ public class Mile {
         this.mileAmount = mileAmount;
     }
 
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Mile mile = (Mile) o;
-        return Double.compare(mile.FREE_MILEAGE, FREE_MILEAGE) == 0 && Double.compare(mile.mileAmount, mileAmount) == 0 && Objects.equals(unit, mile.unit);
+        return Double.compare(mile.FREE_MILEAGE, FREE_MILEAGE) == 0 && Double.compare(mile.mileAmount, mileAmount) == 0 && Objects.equals(UNIT, mile.UNIT);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(FREE_MILEAGE, mileAmount, unit);
+        return Objects.hash(FREE_MILEAGE, mileAmount, UNIT);
     }
 
     @Override
@@ -61,7 +56,20 @@ public class Mile {
         return "Mile{" +
                 "FREE_MILEAGE=" + FREE_MILEAGE +
                 ", mileAmount=" + mileAmount +
-                ", unit='" + unit + '\'' +
+                ", UNIT='" + UNIT + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean checkFreeMile() {
+        if(getMileAmount() - getFREE_MILEAGE() > 0){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public double getRestAmount() {
+        return mileAmount - FREE_MILEAGE;
     }
 }
