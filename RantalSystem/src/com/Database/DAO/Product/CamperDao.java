@@ -1,11 +1,11 @@
-package com.Domin.Payment;
+package com.Database.DAO.Product;
 
 /**
  * @ author Fei Gu
- * @ create 2021-05-02-11.38
+ * @ create 2021-05-02-12.05
  * @ grade CS20_EASV_SØNDERBORG
  * @ Description
  * @ Version
  */
-public class Invoice {
+public interface CamperDao {
 }

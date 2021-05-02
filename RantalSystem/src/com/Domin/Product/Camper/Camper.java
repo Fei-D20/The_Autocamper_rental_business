@@ -1,4 +1,4 @@
-package com.Domin.Product;
+package com.Domin.Product.Camper;
 
 import java.util.Date;
 import java.util.Objects;
@@ -19,10 +19,12 @@ public class Camper {
     private double tankAmount;
     private double fullTankAmount;
 
+    private Mile mile;
+
     public Camper() {
     }
 
-    public Camper(int camperID, int categoryID, String camperType, Date registerYear, boolean fullTankSituation, double tankAmount, double fullTankAmount) {
+    public Camper(int camperID, int categoryID, String camperType, Date registerYear, boolean fullTankSituation, double tankAmount, double fullTankAmount, Mile mile) {
         this.camperID = camperID;
         this.categoryID = categoryID;
         this.camperType = camperType;
@@ -30,6 +32,7 @@ public class Camper {
         this.fullTankSituation = fullTankSituation;
         this.tankAmount = tankAmount;
         this.fullTankAmount = fullTankAmount;
+        this.mile = new Mile();
     }
 
     public int getCamperID() {
@@ -88,19 +91,26 @@ public class Camper {
         this.fullTankAmount = fullTankAmount;
     }
 
+    public Mile getMile() {
+        return mile;
+    }
+
+    public void setMile(Mile mile) {
+        this.mile = mile;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Camper camper = (Camper) o;
-        return camperID == camper.camperID && categoryID == camper.categoryID && fullTankSituation == camper.fullTankSituation && Double.compare(camper.tankAmount, tankAmount) == 0 && Double.compare(camper.fullTankAmount, fullTankAmount) == 0 && Objects.equals(camperType, camper.camperType) && Objects.equals(registerYear, camper.registerYear);
+        return camperID == camper.camperID && categoryID == camper.categoryID && fullTankSituation == camper.fullTankSituation && Double.compare(camper.tankAmount, tankAmount) == 0 && Double.compare(camper.fullTankAmount, fullTankAmount) == 0 && Objects.equals(camperType, camper.camperType) && Objects.equals(registerYear, camper.registerYear) && Objects.equals(mile, camper.mile);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(camperID, categoryID, camperType, registerYear, fullTankSituation, tankAmount, fullTankAmount);
+        return Objects.hash(camperID, categoryID, camperType, registerYear, fullTankSituation, tankAmount, fullTankAmount, mile);
     }
-
 
     @Override
     public String toString() {
@@ -112,8 +122,7 @@ public class Camper {
                 ", fullTankSituation=" + fullTankSituation +
                 ", tankAmount=" + tankAmount +
                 ", fullTankAmount=" + fullTankAmount +
+                ", mile=" + mile +
                 '}';
     }
-
-
 }

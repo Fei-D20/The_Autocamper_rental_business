@@ -1,4 +1,4 @@
-package com.Domin.Payment;
+package com.Domin.Payment.CamperFee;
 
 /**
  * @ author Fei Gu
@@ -7,5 +7,5 @@ package com.Domin.Payment;
  * @ Description
  * @ Version
  */
-public interface IF_CamperFee extends IF_Payment{
+public interface IF_CamperFee {
 }

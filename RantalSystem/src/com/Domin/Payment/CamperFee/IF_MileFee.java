@@ -1,4 +1,6 @@
-package com.Domin.Payment;
+package com.Domin.Payment.CamperFee;
+
+import com.Domin.Product.Camper.Mile;
 
 /**
  * @ author Fei Gu
@@ -8,4 +10,5 @@ package com.Domin.Payment;
  * @ Version
  */
 public interface IF_MileFee extends IF_CamperFee{
+    public Mile checkMile();
 }

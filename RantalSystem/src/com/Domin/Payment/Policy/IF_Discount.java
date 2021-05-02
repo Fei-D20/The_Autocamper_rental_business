@@ -1,4 +1,4 @@
-package com.Domin.Payment;
+package com.Domin.Payment.Policy;
 
 /**
  * @ author Fei Gu
@@ -7,5 +7,5 @@ package com.Domin.Payment;
  * @ Description
  * @ Version
  */
-public interface IF_Discount extends IF_Policy{
+public interface IF_Discount {
 }
