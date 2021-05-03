@@ -1,10 +1,5 @@
 package com.Domin.Payment.CamperFee;
 
-import com.Domin.Product.Camper.Camper;
-import org.junit.Test;
-
-import java.lang.annotation.Target;
-
 /**
  * @ author Fei Gu
  * @ create 2021-05-02-22.32

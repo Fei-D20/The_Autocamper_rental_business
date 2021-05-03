@@ -1,0 +1,117 @@
+--CREATE  database DB_AutocamperRental;
+Use DB_AutocamperRental;
+Go
+--CREATE TABLE tblCLIENT(
+	  --fldclientID int  Primary key,
+		--fldclientName varchar (30),
+        --fldclientPhone INTEGER , 
+		--fldzipcode   varchar (10),
+		--fldcity varchar (15),
+		--fldemailAddress varchar (15)
+		--)
+--Use DB_AutocamperRental;
+--Go
+CREATE TABLE tblDriverLIcense(
+        
+		  fldriverLicenseNo int Primary Key,
+		--  foreign key (fldclientID) references (tblClient),
+		fldco_DriverName varchar (30),
+		fldco_DriverLicenseNo int,
+		flddriverLicensestatus varchar (10),
+		fldco_driverLicenseStatus varchar (10)
+		)
+
+		--Use DB_AutocamperRental;
+        --Go
+--CREATE TABLE tblCamperType(
+	    --fldcamperType varchar Primary key ,
+		--fldnumberOfBeds int,
+		--fldheatingFacility int, 
+		--fldspaceAvailable int ,
+		--fldkitchenfacilities varchar(100)
+		--)
+		--Use DB_AutocamperRental;
+        --Go
+		CREATE TABLE tblCAMPER(
+	   fldcamperID_ int Primary key ,
+		foreign key  (fldcamperType) references tblCamperType (fldcamperType),
+		--foreign key (fldcategoryID) references (tblPriceCategory),
+        fldCamper_regstYear int , 
+		fldfullTankStatus varchar (10)
+	     )
+		--Use DB_AutocamperRental;
+        --Go
+--CREATE TABLE PriceCategory(
+	--    fldcategoryID int Primary key ,
+		--fldcategoryType varchar(30),
+		--fldcategoryprice decimal,
+		--fldcategorySeasonalPrice decimal
+		--)
+		
+		--Use DB_AutocamperRental;
+        --Go
+CREATE TABLE tblBookingReservation(
+	      fldorderID int Primary key ,
+		--foreign key (fldclientID) references (tblCLIENT),
+		--foreign key (fldpaymentID) references (tblPayment),
+		--foreign key (fldcamperID) references (tblCamper),
+        fldrentalAmount decimal (10), 
+		fldrentalperiodStartDate date ,
+		fldrentalperiodEndDate date )
+		--Use DB_AutocamperRental;
+        --Go
+CREATE TABLE tblBank(
+	    fldbankID int Primary key ,
+		--foreign key (fldclientID) references (tblCLIENT),
+		--foreign key (fldpaymentID) references (tblPayment),
+		--foreign key (fldinsuranceID) references (tblInsurance),
+		fldbankName varchar(25);
+
+		--Use DB_AutocamperRental;
+        --Go
+CREATE TABLE Invoice(
+	    fldinvoiceD int Primary key,
+		--foreign key (fldpaymentID) references tblPayment (fldpaymentID),
+		fldinvoiceDueDate date,
+		fldamountDue int 
+		)
+
+		--Use DB_AutocamperRental;
+        --Go
+CREATE TABLE Insurance(
+	    fldinsuranceID int Primary key,
+		fldinurancetype varchar (30),
+		fldinsuranceCovering varchar(100)
+		)
+		--Use DB_AutocamperRental;
+        --Go
+CREATE TABLE tblPayment(
+	    fldpaymentID_ int Primary key,
+		--foreign key (fldorderID) references (tblBookingReservation),
+		--foreign key (fldbankID) references (tblBank),
+		--foreign key (flddiscountID) references (tblDiscount),
+		--foreign key (flddepositID) references (tblDeposit),
+		--foreign key (fldremainingID) references (tblRemainingAmount),
+		--foreign key (fldincuranceID) references (tblInsurance),
+		--foreign key (fldinvoiceID) references (tblInvoice),
+		fldpaymentOvertimeDate  date,
+		fldpaymentCancelDate  date)
+
+
+		--Use DB_AutocamperRental;
+        --Go
+--CREATE TABLE Discount(
+	    --flddiscountD int Primary key ,
+		--flddiscountType varchar (30),
+		--flddiscountAmount decimal
+		--)
+
+		--Use DB_AutocamperRental;
+        --Go
+CREATE TABLE Deposit(
+	    flddepositID int Primary key,
+		flddepositPaid varchar (10),
+		flddepositAmount decimal,
+		--foreign key (bookingDate) references (Booking/Reservation),
+		fldueDate date
+		)

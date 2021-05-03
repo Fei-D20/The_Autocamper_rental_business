@@ -1,0 +1,106 @@
+-- CREATE  database DB_AutoCamperRental;
+Use DB_AutocamperRental;
+Go
+
+
+CREATE TABLE tbl_Bank(
+    fld_BankID   int Primary key not null,
+    fld_BankName varchar(25),
+)
+
+CREATE TABLE tbl_CLIENT(
+    fld_ClientID int not null Primary key,
+    fld_Name varchar (30) not null,
+    fld_Address varchar(80) not null,
+    fld_EmailAddress varchar(30) not null,
+    fld_PhoneNo int not null,
+    fld_DriveLicenseNo int not null,
+    fld_DriverFullDrivingLicenseStatue varchar(10),
+    fld_CoDriverName int,
+    fld_CoDriverLicenseNo int,
+    fld_RentalTimes int,
+    fld_BankID int,
+    foreign key (fld_BankID) references tbl_Bank(fld_BankID),
+    fld_AccountNo int,
+)
+
+
+
+CREATE TABLE tbl_CamperType
+(
+    fld_CamperType varchar(30) Primary key ,
+    fld_NumberOfBeds int,
+    fld_HeatingFacility int,
+    fld_SpaceAvailable int ,
+    fld_KitchenFacilities varchar(100),
+)
+
+CREATE TABLE tbl_PriceCategory(
+    fld_CategoryID int Primary key ,
+    fld_CategoryType varchar(30),
+    fld_CategoryPrice decimal,
+    fld_CategorySeasonalPrice decimal,
+)
+
+CREATE TABLE tbl_CAMPER(
+    fld_CamperID int not null Primary key ,
+    fld_CamperRegisterYear int ,
+    fld_CamperType varchar(30),
+        foreign key (fld_CamperType) references tbl_CamperType (fld_CamperType),
+    fld_CategoryID int,
+        foreign key (fld_CategoryID) references tbl_PriceCategory(fld_CategoryID),
+    fld_FullTankStatus varchar (10),
+)
+
+CREATE TABLE tbl_BookingReservation
+(
+    fld_OrderID int not null Primary key,
+    fld_CamperID int,
+    foreign key (fld_CamperID) references tbl_Camper(fld_CamperID),
+    fld_OrderingDate date,
+
+)
+
+CREATE TABLE tbl_Insurance(
+    fld_InsuranceID int Primary key,
+    fld_InsuranceType varchar (30),
+    fld_InsuranceCovering varchar(100),
+)
+
+CREATE TABLE tbl_Rental(
+    fld_RentalID int not null primary key ,
+    fld_RentalAmount          decimal(10),
+    fld_RentalPeriodStartDate date,
+    fld_RentalPeriodEndDate   date,
+    fld_Deposit decimal(10),
+    fld_DepositStatue varchar(30),
+    fld_Remaining decimal(10),
+    fld_RemainingStatue varchar(30),
+)
+
+CREATE TABLE tbl_Invoice(
+    fld_InvoiceID int Primary key,
+    fld_InvoiceDueDate date,
+    fld_Amount int,
+)
+
+CREATE TABLE tbl_Payment(
+    fld_PaymentID_ int Primary key not null,
+    fld_OrderID int,
+        foreign key (fld_OrderID) references tbl_BookingReservation(fld_OrderID),
+    fld_ClientID int,
+        foreign key (fld_ClientID) references tbl_CLIENT(fld_ClientID),
+    fld_RentalID int,
+        foreign key (fld_RentalID) references tbl_Rental(fld_RentalID),
+    fld_InsuranceID int,
+        foreign key (fld_InsuranceID) references tbl_Insurance(fld_InsuranceID),
+    fld_InvoiceID int,
+        foreign key (fld_InvoiceID) references tbl_Invoice(fld_InvoiceID),
+   fld_PaymentOvertimeDate  date,
+   fld_PaymentCancelDate  date,
+   )
+
+
+
+
+
