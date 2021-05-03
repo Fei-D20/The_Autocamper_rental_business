@@ -68,7 +68,7 @@ public class CRUD {
         getTable(sql);
     }
 
-    public void update(String sql,Object ...args) throws Exception { //sql 中占位符的个数与可变形参长度相同
+    public static void update(String sql,Object ...args) throws Exception { //sql 中占位符的个数与可变形参长度相同
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;
