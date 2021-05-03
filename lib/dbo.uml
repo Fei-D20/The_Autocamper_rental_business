@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>b8f69119-a259-42ec-a74a-af161c082728.SCHEMA:DB_AutocamperRental.dbo</OriginalElement>
+  <nodes>
+    <node x="971.5" y="0.0">b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_CamperType</node>
+    <node x="1087.0" y="491.0">b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Insurance</node>
+    <node x="0.0" y="491.0">b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Invoice</node>
+    <node x="529.0" y="742.0">b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Payment</node>
+    <node x="545.5" y="229.0">b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Bank</node>
+    <node x="213.0" y="436.0">b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Rental</node>
+    <node x="664.5" y="11.0">b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_PriceCategory</node>
+    <node x="837.5" y="196.0">b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_CAMPER</node>
+    <node x="478.0" y="392.0">b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_CLIENT</node>
+    <node x="837.0" y="491.0">b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_BookingReservation</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_CLIENT" target="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Bank">
+      <point x="0.0" y="-150.0" />
+      <point x="0.0" y="40.0" />
+    </edge>
+    <edge source="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_CAMPER" target="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_CamperType">
+      <point x="57.25" y="-73.0" />
+      <point x="1009.25" y="171.0" />
+      <point x="1096.0" y="171.0" />
+      <point x="0.0" y="73.0" />
+    </edge>
+    <edge source="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Payment" target="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_BookingReservation">
+      <point x="47.39999999999998" y="-106.0" />
+      <point x="694.9" y="712.0" />
+      <point x="952.0" y="712.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Payment" target="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Insurance">
+      <point x="94.79999999999995" y="-106.0" />
+      <point x="742.3" y="722.0" />
+      <point x="1219.0" y="722.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Payment" target="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Invoice">
+      <point x="-94.80000000000007" y="-106.0" />
+      <point x="552.6999999999999" y="722.0" />
+      <point x="96.5" y="722.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Payment" target="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_CLIENT">
+      <point x="0.0" y="-106.0" />
+      <point x="0.0" y="150.0" />
+    </edge>
+    <edge source="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_CAMPER" target="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_PriceCategory">
+      <point x="-57.25" y="-73.0" />
+      <point x="894.75" y="171.0" />
+      <point x="808.0" y="171.0" />
+      <point x="0.0" y="62.0" />
+    </edge>
+    <edge source="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_BookingReservation" target="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_CAMPER">
+      <point x="0.0" y="-51.0" />
+      <point x="0.0" y="73.0" />
+    </edge>
+    <edge source="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Payment" target="b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_Rental">
+      <point x="-47.40000000000009" y="-106.0" />
+      <point x="600.0999999999999" y="712.0" />
+      <point x="335.5" y="712.0" />
+      <point x="0.0" y="106.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9034907597535933" x="675.5" y="477.00000000000006" />
+  <SelectedNodes>
+    <node>b8f69119-a259-42ec-a74a-af161c082728.TABLE:DB_AutocamperRental.dbo.tbl_BookingReservation</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
