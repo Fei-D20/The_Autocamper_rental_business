@@ -2,9 +2,16 @@ package com.Database.DAO.Product.Camper;
 
 import com.Database.JDBC.ConnectionUtil;
 import com.Domin.Product.Camper.Camper;
+import com.Domin.Product.Camper.Mile;
+import com.Domin.Product.Camper.Tank;
+import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,23 +22,56 @@ import java.util.List;
  * @ Version
  */
 public class CamperDaoImpl implements CamperDao{
+    @Test
+    public void testAdd() throws ParseException {
+        CamperDaoImpl camperDao = new CamperDaoImpl();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String str = "2020-5-3";
+        Date date = simpleDateFormat.parse(str);
+
+        Camper camper = new Camper();
+        camper.setCamperID(001);
+        camper.setCamperType("bigCamper");
+        camper.setRegisterYear(date);
+        camper.setCategoryID(001);
+        Tank tank = new Tank(1000, 1000);
+        Mile mile = new Mile(0);
+        camper.setMile(mile);
+        camper.setTank(tank);
+
+        System.out.println(camper);
+
+
+        camperDao.add(camper);
+
+
+    }
     @Override
     public void add(Camper camper) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String sql =
-                "insert into " +
-                        "tbl_CAMPER " +
-                        "(fld_CamperID, fld_CamperRegisterYear, fld_CamperType, fld_CategoryID, fld_FullTankStatus) " +
-                        "values (?,?,?,?,?))";
         try{
+            String sql =
+                    "insert into " +
+                            "tbl_Camper " +
+                            "(fld_CamperID, fld_CamperRegisterYear, fld_CamperType, fld_CategoryID, fld_FullTankStatus) " +
+                            "values (?,?,?,?,?))";
             connection = ConnectionUtil.getConnection();
             preparedStatement = connection.prepareStatement(sql);
+
             preparedStatement.setInt(1,camper.getCamperID());
-//            preparedStatement.setInt(2,camper.getRegisterYear());
+            preparedStatement.setDate(2,new java.sql.Date(camper.getRegisterYear().getTime()));
+            preparedStatement.setString(3,camper.getCamperType());
+            preparedStatement.setInt(4,camper.getCategoryID());
+            preparedStatement.setBoolean(5,camper.getTank().checkFullTank());
+
+            preparedStatement.execute();
 
         } catch (Exception e){
             e.printStackTrace();
+        } finally {
+            ConnectionUtil.closeConAndPS(connection,preparedStatement);
         }
     }
 
