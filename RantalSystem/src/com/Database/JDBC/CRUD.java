@@ -1,4 +1,4 @@
-package com.Database.PerparStatement;
+package com.Database.JDBC;
 
 import com.Database.JDBC.ConnectionUtil;
 import com.Domin.RalativeOutSide.Bank;

@@ -17,13 +17,13 @@ public class Camper implements IF_Camper{
     private Date registerYear;
 
 
-    private Mile mile;
-    private Tank tank;
+    private Mile mile = null;
+    private Tank tank = null;
 
     public Camper() {
     }
 
-    public Camper(int camperID, int categoryID, String camperType, Date registerYear, Mile mile, Tank tank) {
+    public Camper(int camperID, int categoryID, String camperType, Date registerYear,Mile mile,Tank tank) {
         this.camperID = camperID;
         this.categoryID = categoryID;
         this.camperType = camperType;
