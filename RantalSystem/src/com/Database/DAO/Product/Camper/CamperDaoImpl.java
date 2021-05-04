@@ -1,17 +1,13 @@
 package com.Database.DAO.Product.Camper;
 
 import com.Database.JDBC.CRUD;
-import com.Database.JDBC.ConnectionUtil;
 import com.Domin.Product.Camper.Camper;
 import com.Domin.Product.Camper.Mile;
 import com.Domin.Product.Camper.Tank;
 import org.junit.Test;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -51,11 +47,14 @@ public class CamperDaoImpl implements CamperDao{
     @Override
     public void add(Camper camper) {
         String sql = "insert into tbl_Camper (fld_CamperID, fld_CamperRegisterYear, fld_CamperType, fld_CategoryID, fld_FullTankStatus) values (?,?,?,?,?))";
+
         int camperID = camper.getCamperID();
         String camperType = camper.getCamperType();
         int categoryID = camper.getCategoryID();
         boolean fullTankStatue = camper.getTank().checkFullTank();
+        String tankStatue = String.valueOf(fullTankStatue);
         Date registerYear = camper.getRegisterYear();
+        java.sql.Date date = new java.sql.Date(registerYear.getTime());
 
 //        Connection connection = null;
 //        PreparedStatement preparedStatement = null;
@@ -79,7 +78,7 @@ public class CamperDaoImpl implements CamperDao{
 //        }
 
         try {
-            CRUD.update(sql,camperID,registerYear,camperType,categoryID,fullTankStatue);
+            CRUD.update(sql,camperID,date,camperType,categoryID,tankStatue);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -92,17 +91,16 @@ public class CamperDaoImpl implements CamperDao{
     }
 
     @Override
-    public void delete(int camperID) {
+    public void delete(int id) {
 
     }
 
     @Override
-    public Camper getCamper(int camperID) {
+    public Camper getInstance(int id) {
         return null;
     }
 
     @Override
-    public List<Camper> getAll() {
-        return null;
+    public void getAll() {
     }
 }

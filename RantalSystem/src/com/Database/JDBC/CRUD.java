@@ -87,7 +87,7 @@ public class CRUD {
         }
     }
 
-    public <T> T getInstance(Class<T> clazz, String sql, Object ...args){
+    public static <T> T getInstance(Class<T> clazz, String sql, Object ...args){
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -125,7 +125,7 @@ public class CRUD {
         return null;
     }
 
-    public void getTable(String sql) {
+    public static void getTable(String sql) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;

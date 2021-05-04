@@ -1,6 +1,5 @@
 package com.Domin.Product.Camper;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -24,7 +23,7 @@ public class Camper implements IF_Camper{
     public Camper() {
     }
 
-    public Camper(int camperID, int categoryID, String camperType, Date registerYear,Mile mile,Tank tank) {
+    public Camper(int camperID, int categoryID, String camperType, Date registerYear, Mile mile, Tank tank) {
         this.camperID = camperID;
         this.categoryID = categoryID;
         this.camperType = camperType;

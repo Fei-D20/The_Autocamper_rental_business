@@ -1,5 +1,6 @@
 package com.Database.DAO.Product.Camper;
 
+import com.Database.DAO.Dao;
 import com.Domin.Product.Camper.Camper;
 
 import java.util.List;
@@ -11,10 +12,5 @@ import java.util.List;
  * @ Description
  * @ Version
  */
-public interface CamperDao {
-    public void add(Camper camper);
-    public void update(Camper camper);
-    public void delete(int camperID);
-    public Camper getCamper(int camperID);
-    public List<Camper> getAll();
+public interface CamperDao extends Dao<Camper> {
 }
