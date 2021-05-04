@@ -51,6 +51,11 @@ public class CamperDaoImpl implements CamperDao{
     @Override
     public void add(Camper camper) {
         String sql = "insert into tbl_Camper (fld_CamperID, fld_CamperRegisterYear, fld_CamperType, fld_CategoryID, fld_FullTankStatus) values (?,?,?,?,?))";
+        int camperID = camper.getCamperID();
+        String camperType = camper.getCamperType();
+        int categoryID = camper.getCategoryID();
+        boolean fullTankStatue = camper.getTank().checkFullTank();
+        Date registerYear = camper.getRegisterYear();
 
 //        Connection connection = null;
 //        PreparedStatement preparedStatement = null;
@@ -74,7 +79,7 @@ public class CamperDaoImpl implements CamperDao{
 //        }
 
         try {
-            CRUD.update(sql,camper.getCamperID(),new java.sql.Date(camper.getRegisterYear().getTime()),camper.getCamperType(),camper.getCategoryID(),camper.getTank().checkFullTank());
+            CRUD.update(sql,camperID,registerYear,camperType,categoryID,fullTankStatue);
         } catch (Exception e) {
             e.printStackTrace();
         }
