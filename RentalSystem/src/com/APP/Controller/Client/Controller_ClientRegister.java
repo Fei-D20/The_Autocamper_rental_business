@@ -1,7 +1,9 @@
 package com.APP.Controller.Client;
 
+import com.Domain.User.Client;
 import com.UI.ClientUI.UI_ClientRegister;
-import javafx.event.Event;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -14,15 +16,19 @@ import javafx.stage.Stage;
  * @ Version
  */
 public class Controller_ClientRegister {
-    public EventHandler<MouseEvent> clientRegister(Stage stage){
-        EventHandler<MouseEvent> mouseEventEventHandler = new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                UI_ClientRegister ui_clientRegister = new UI_ClientRegister();
-                ui_clientRegister.ClientRegisterPage(stage);
-            }
+    Client newRegisterClient;
 
-        };
+    public EventHandler<MouseEvent> clientRegister(Stage stage){
+        EventHandler<MouseEvent> mouseEventEventHandler = event -> UI_ClientRegister.clientRegisterPage(stage);
+        newRegisterClient = new Client();
+
         return mouseEventEventHandler;
+    }
+
+    public ChangeListener<String> clientRegisterText(){
+        ChangeListener<String> changeListener = (observable, oldValue, newValue) -> {
+            System.out.println(newValue);
+        };
+        return changeListener;
     }
 }

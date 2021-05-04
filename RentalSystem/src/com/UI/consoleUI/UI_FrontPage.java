@@ -7,7 +7,6 @@ package com.UI.consoleUI;/**
  */
 
 import com.APP.Controller.console.Controller_FrontPage;
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -18,14 +17,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
-public class UI_FrontPage extends Application {
+public class UI_FrontPage {
 
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    @Override
-    public void start(Stage primaryStage) {
+    public static Stage showFrontPage(Stage stage) {
 
         Label label = new Label("Please choose User Category : ");
         label.setLayoutX(200);
@@ -39,7 +33,7 @@ public class UI_FrontPage extends Application {
         client.setLayoutX(200);
         client.setLayoutY(300);
 
-        client.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_FrontPage().ClientButton(primaryStage));
+        client.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_FrontPage().gotoClientFrontPage(stage));
 
 
         Button administrator = new Button(" Administrator ");
@@ -55,8 +49,8 @@ public class UI_FrontPage extends Application {
         Pane pane = new Pane();
         pane.getChildren().setAll(anchorPane);
         Scene scene = new Scene(pane,600,800);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Auto Camper Rent System ");
-        primaryStage.show();
+        stage.setScene(scene);
+        stage.setTitle("Auto Camper Rent System ");
+        return stage;
     }
 }

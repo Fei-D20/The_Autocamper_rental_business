@@ -1,6 +1,7 @@
 package com.APP.Controller.console;
 
 import com.UI.ClientUI.UI_ClientFrontPage;
+import com.UI.consoleUI.UI_FrontPage;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -19,15 +20,14 @@ public class Controller_FrontPage {
      * @param stage the p
      * @return
      */
-    public EventHandler<MouseEvent> ClientButton(Stage stage){
-        EventHandler<MouseEvent> clientBank = new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                UI_ClientFrontPage ui_clientFrontPage = new UI_ClientFrontPage();
-                ui_clientFrontPage.clientFrontPage(stage);
-            }
-        };
-        return clientBank;
+    public EventHandler<MouseEvent> gotoClientFrontPage(Stage stage){
+        EventHandler<MouseEvent> gotoClientFrontPage = event -> UI_ClientFrontPage.clientFrontPage(stage);
+        return gotoClientFrontPage;
+    }
+
+    public EventHandler<MouseEvent> gotoFrontPage(Stage stage){
+        EventHandler<MouseEvent> gotoFrontPage = event -> UI_FrontPage.showFrontPage(stage);
+        return gotoFrontPage;
     }
 
 
