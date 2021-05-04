@@ -1,11 +1,18 @@
-use DB_AutocamperRental
-go
-
 create table tbl_Bank
 (
     fld_BankID   int not null
         primary key,
     fld_BankName varchar(25)
+)
+go
+
+create table tbl_BookingReservation
+(
+    fld_OrderID      int not null
+        primary key,
+    fld_CamperID     int
+        references tbl_CAMPER (fld_CamperID),
+    fld_OrderingDate date
 )
 go
 
@@ -67,26 +74,16 @@ create table tbl_PriceCategory
 )
 go
 
-create table tbl_CAMPER
+create table tbl_Camper
 (
     fld_CamperID           int not null
         primary key,
-    fld_CamperRegisterYear int,
     fld_CamperType         varchar(30)
         references tbl_CamperType,
     fld_CategoryID         int
         references tbl_PriceCategory,
-    fld_FullTankStatus     varchar(10)
-)
-go
-
-create table tbl_BookingReservation
-(
-    fld_OrderID      int not null
-        primary key,
-    fld_CamperID     int
-        references tbl_CAMPER,
-    fld_OrderingDate date
+    fld_FullTankStatus     varchar(10),
+    fld_CamperRegisterYear date
 )
 go
 
