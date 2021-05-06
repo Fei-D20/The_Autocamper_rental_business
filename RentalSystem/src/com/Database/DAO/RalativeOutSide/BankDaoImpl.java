@@ -19,7 +19,7 @@ public class BankDaoImpl implements BankDao {
         bank1.setFld_BankName("EASVBank");
 
         add(bank1);
-        getAll();
+//        getAll();
     }
 
     @Test
@@ -65,11 +65,10 @@ public class BankDaoImpl implements BankDao {
     }
 
     @Override
-    public Bank getInstance(int id) {
+    public void getInstance(int id) {
         String sql = "select fld_BankID, fld_BankName from tbl_Bank where fld_BankID = ?";
-        Bank bank = CRUD.getInstance(Bank.class, sql, id);
-        System.out.println(bank);
-        return bank;
+        CRUD.getInstance(sql, id);
+
     }
 
     @Override

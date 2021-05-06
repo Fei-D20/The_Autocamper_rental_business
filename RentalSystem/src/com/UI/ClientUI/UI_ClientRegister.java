@@ -1,11 +1,11 @@
 package com.UI.ClientUI;
 
 import com.APP.Controller.Client.Controller_ClientRegister;
+import com.Module.Register.RegisterClient;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -32,8 +32,19 @@ public class UI_ClientRegister {
         TextField tf_name = new TextField();
         tf_name.setPromptText("Please input your full name");
         tf_name.setTooltip(new Tooltip("Please input your full name"));
-        tf_name.textProperty().addListener(new Controller_ClientRegister().clientRegisterText());
         tf_name.setPrefSize(300.0,10.0);
+        tf_name.textProperty().addListener(new Controller_ClientRegister().clientRegisterName());
+
+        Label l_password = new Label("Your password :  ");
+        l_password.setFont(Font.font(16));
+
+        PasswordField pf_passwordField = new PasswordField();
+        pf_passwordField.setPromptText("Please input password");
+        pf_passwordField.setTooltip(new Tooltip("Please input password"));
+        pf_passwordField.setPrefSize(300.0,10.0);
+        pf_passwordField.textProperty().addListener(new Controller_ClientRegister().clientRegisterPassWord());
+
+
 
         Label l_address = new Label("Your address : ");
         l_address.setFont(Font.font(16));
@@ -42,6 +53,7 @@ public class UI_ClientRegister {
         tf_address.setPromptText("Street,number,zipcode,city,country..");
         tf_address.setTooltip(new Tooltip("Street,number,zipcode,city,country.."));
         tf_address.setPrefSize(300.0,10.0);
+        tf_address.textProperty().addListener(new Controller_ClientRegister().clientRegisterAddress());
 
         Label l_email = new Label("Your email : ");
         l_email.setFont(Font.font(16));
@@ -49,6 +61,8 @@ public class UI_ClientRegister {
         TextField tf_email = new TextField();
         tf_email.setPromptText("email@mail.com");
         tf_email.setTooltip(new Tooltip("email@mail.com"));
+        tf_email.textProperty().addListener(new Controller_ClientRegister().clientRegisterEmail());
+
 
         Label l_phoneNo = new Label("Your phone number : ");
         l_phoneNo.setFont(Font.font(16));
@@ -57,19 +71,15 @@ public class UI_ClientRegister {
 
         tf_phoneNo.setPromptText("xxxx-xxxxxxxx");
         tf_phoneNo.setTooltip(new Tooltip("xxxx-xxxxxxxx"));
+        tf_phoneNo.textProperty().addListener(new Controller_ClientRegister().clientRegisterPhoneNo());
 
-        Label l_driveLicenseNo = new Label("Drive License no. : ");
-        l_driveLicenseNo.setFont(Font.font(16));
 
-        TextField tf_driveLicenseNo = new TextField();
 
-        Label l_driveFullDrivingLicenseStatue = new Label("Full driving license : ");
-        l_driveFullDrivingLicenseStatue.setFont(Font.font(16));
-        Text t_driveFullDrivingLicenseStatue = new Text();
-        String s_fullDrivingLicenseExp = "Do you have been held the driving\n license in your country of domicile\n for at least 12 month?";
-        t_driveFullDrivingLicenseStatue.setText(s_fullDrivingLicenseExp);
 
-        TextField tf_driveFullDrivingLicenseStatue = new TextField();
+        Button register = new Button("Register");
+        register.addEventHandler(MouseEvent.MOUSE_CLICKED,new Controller_ClientRegister().ClientRegister(RegisterClient.getNewClient()));
+
+        Button go_back = new Button("Go back");
 
 
         GridPane gridPane = new GridPane();
@@ -80,22 +90,21 @@ public class UI_ClientRegister {
         gridPane.add(l_name,0,1);
         gridPane.add(tf_name,1,1);
 
-        gridPane.add(l_address,0,2);
-        gridPane.add(tf_address,1,2);
+        gridPane.add(l_password,0,2);
+        gridPane.add(pf_passwordField,1,2);
 
-        gridPane.add(l_email,0,3);
-        gridPane.add(tf_email,1,3);
+        gridPane.add(l_address,0,3);
+        gridPane.add(tf_address,1,3);
 
-        gridPane.add(l_phoneNo,0,4);
-        gridPane.add(tf_phoneNo,1,4);
+        gridPane.add(l_email,0,4);
+        gridPane.add(tf_email,1,4);
 
-        gridPane.add(l_driveLicenseNo,0,5);
-        gridPane.add(tf_driveLicenseNo,1,5);
+        gridPane.add(l_phoneNo,0,5);
+        gridPane.add(tf_phoneNo,1,5);
 
-        gridPane.add(l_driveFullDrivingLicenseStatue,0,6);
-        gridPane.add(tf_driveFullDrivingLicenseStatue,1,6);
 
-        gridPane.add(t_driveFullDrivingLicenseStatue,1,7);
+        gridPane.add(register,0,10);
+        gridPane.add(go_back,1,10);
 
 
 

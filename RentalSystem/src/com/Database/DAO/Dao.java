@@ -14,6 +14,6 @@ public interface Dao<T> {
     public  void add(T t);
     public  void update(T t);
     public  void delete(int id);
-    public  T getInstance(int id);
+    public  void getInstance(int id);
     public  void getAll();
 }

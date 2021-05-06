@@ -26,8 +26,7 @@ public class PCimpl implements PriceCategoriesDao{
     }
 
     @Override
-    public PriceCategories getInstance(int id) {
-        return null;
+    public void getInstance(int id) {
     }
 
     @Override

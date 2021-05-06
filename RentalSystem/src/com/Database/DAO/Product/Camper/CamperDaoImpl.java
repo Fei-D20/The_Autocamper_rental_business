@@ -96,8 +96,7 @@ public class CamperDaoImpl implements CamperDao{
     }
 
     @Override
-    public Camper getInstance(int id) {
-        return null;
+    public void getInstance(int id) {
     }
 
     @Override

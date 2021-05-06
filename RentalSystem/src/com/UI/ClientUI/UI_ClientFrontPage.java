@@ -31,7 +31,7 @@ public class UI_ClientFrontPage {
         userRegister.setLayoutX(200);
         userRegister.setLayoutY(300);
 
-        userRegister.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_ClientRegister().clientRegister(stage));
+        userRegister.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_ClientRegister().gotoClientRegister(stage));
 
         Button userLogIn = new Button(" Log in ");
         userLogIn.setPrefHeight(50);

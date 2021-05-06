@@ -1,9 +1,7 @@
 package com.Database.JDBC;
 
-import com.Domain.RelativeOutSide.Bank;
 import org.junit.Test;
 
-import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,10 +53,9 @@ public class CRUD {
     }
 
     @Test
-    public void testGetINstance(){
+    public void testGetInstance(){
         String sql = "select fld_BankID, fld_BankName from tbl_Bank where fld_BankID = ?";
-        Bank bank = getInstance(Bank.class, sql, 1);
-        System.out.println(bank);
+        getInstance(sql,1);
     }
 
     @Test
@@ -67,7 +64,7 @@ public class CRUD {
         getTable(sql);
     }
 
-    public static void update(String sql,Object ...args) throws Exception { //sql 中占位符的个数与可变形参长度相同
+    public static void update(String sql,Object ...args)  {
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -86,42 +83,39 @@ public class CRUD {
         }
     }
 
-    public static <T> T getInstance(Class<T> clazz, String sql, Object ...args){
+    public static void getInstance(String sql, Object args){
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
             connection = ConnectionUtil.getConnection();
             preparedStatement = connection.prepareStatement(sql);
-
-            for (int i = 0; i < args.length; i++) {
-                preparedStatement.setObject(i+1,args[i]);
-            }
+            preparedStatement.setObject(1,args);
 
             resultSet = preparedStatement.executeQuery();
 
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
 
-            if(resultSet.next()){
-                T t = clazz.newInstance();
-                for (int i = 0; i < columnCount; i++) {
-
-                    Object columnValue = resultSet.getObject(i + 1);
-                    String columnLabel = metaData.getColumnLabel(i + 1);
-
-                    Field declaredField = clazz.getDeclaredField(columnLabel);
-                    declaredField.setAccessible(true);
-                    declaredField.set(t,columnValue);
-                }
-                return t;
+            for (int i = 0; i < columnCount; i++) {
+                System.out.print(metaData.getColumnName(i + 1) + "\t");
             }
+            System.out.println();
+
+            if (resultSet.next()) {
+                for (int i = 0; i < columnCount; i++) {
+                    System.out.print(resultSet.getObject(i + 1) +"    |    ");
+                }
+                System.out.println();
+            }
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             ConnectionUtil.closeConPSAndRS(connection,preparedStatement,resultSet);
         }
-        return null;
     }
 
     public static void getTable(String sql) {
@@ -143,7 +137,7 @@ public class CRUD {
 
             while (resultSet.next()) {
                 for (int i = 0; i < columnCount; i++) {
-                    System.out.print(resultSet.getString(i + 1) + "\t");
+                    System.out.print(resultSet.getString(i + 1) +"      |      ");
                 }
                 System.out.println();
             }
