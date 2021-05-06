@@ -7,7 +7,7 @@ package com.Domain.User;
  * @ Description
  * @ Version
  */
-public class Admin extends User implements IF_Administrator{
+public class Admin extends User implements IF_Administrator {
     private int adminID;
     private int adminPassword;
 

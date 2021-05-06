@@ -12,5 +12,5 @@ package com.Domain.User;
  * This is the interface about administrator's function.
  * Not same as user the administrator have more authority.
  */
-public interface IF_Administrator extends IF_User{
+public interface IF_Administrator extends IF_User {
 }

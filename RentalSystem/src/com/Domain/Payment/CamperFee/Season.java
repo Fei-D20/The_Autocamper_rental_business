@@ -16,7 +16,7 @@ public enum Season {
         this.percentage = percentage;
     }
 
-    public static double getPercentage(Season season){
+    public static double getPercentage(Season season) {
         return season.percentage;
     }
 }

@@ -10,6 +10,6 @@ import com.Domain.RelativeOutSide.Bank;
  * @ Description
  * @ Version
  */
-public interface BankDao extends Dao<Bank>{
+public interface BankDao extends Dao<Bank> {
 
 }

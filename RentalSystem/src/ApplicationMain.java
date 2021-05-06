@@ -24,7 +24,7 @@ public class ApplicationMain extends Application {
         Pane frontPage = UI_FrontPage.showFrontPage(pane);
 
         pane.getChildren().add(frontPage);
-        Scene scene = new Scene(pane,600,800);
+        Scene scene = new Scene(pane, 600, 800);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Auto Camper Rent System ");
         primaryStage.show();

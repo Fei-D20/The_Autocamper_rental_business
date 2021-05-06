@@ -1,13 +1,8 @@
 package com.Database.DAO.User;
 
 import com.Database.JDBC.CRUD;
-import com.Database.JDBC.ConnectionUtil;
 import com.Domain.User.Client;
 import org.junit.Test;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.zip.DeflaterOutputStream;
 
 /**
  * @ author Fei Gu
@@ -16,10 +11,10 @@ import java.util.zip.DeflaterOutputStream;
  * @ Description
  * @ Version
  */
-public class ClientDaoImpl implements ClientDao{
+public class ClientDaoImpl implements ClientDao {
 
     @Test
-    public void testAdd(){
+    public void testAdd() {
         Client client = new Client();
         client.setClientID(3);
         client.setName("Fei Gu3");
@@ -31,7 +26,7 @@ public class ClientDaoImpl implements ClientDao{
     }
 
     @Test
-    public void testUpdate(){
+    public void testUpdate() {
         Client client = new Client();
         client.setClientID(001);
         client.setName("Fei Gu update ");
@@ -44,21 +39,20 @@ public class ClientDaoImpl implements ClientDao{
     }
 
     @Test
-    public void testDelete(){
+    public void testDelete() {
         delete(1);
 
     }
 
     @Test
-    public void testGetInstance(){
+    public void testGetInstance() {
         getInstance(1);
     }
 
     @Test
-    public void testGetAll(){
+    public void testGetAll() {
         getAll();
     }
-
 
 
     @Override
@@ -73,7 +67,7 @@ public class ClientDaoImpl implements ClientDao{
             String email = client.getEmail();
             int phoneNo = client.getPhoneNo();
 
-            CRUD.update(sql,clientID,name,address,email,phoneNo);
+            CRUD.update(sql, clientID, name, address, email, phoneNo);
             System.out.println("Add database table Client successful!");
 
         } catch (Exception e) {
@@ -83,7 +77,7 @@ public class ClientDaoImpl implements ClientDao{
 
     @Override
     public void update(Client client) {
-        try{
+        try {
             String sql = "update tbl_Client set fld_Name = ? , fld_Address = ?, fld_EmailAddress = ? , fld_PhoneNo = ? where fld_ClientID = ?";
 
             int clientID = client.getClientID();
@@ -92,10 +86,10 @@ public class ClientDaoImpl implements ClientDao{
             String email = client.getEmail();
             int phoneNo = client.getPhoneNo();
 
-            CRUD.update(sql,name,address,email,phoneNo,clientID);
+            CRUD.update(sql, name, address, email, phoneNo, clientID);
             System.out.println("Update database table Client is successful! ");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -104,7 +98,7 @@ public class ClientDaoImpl implements ClientDao{
     public void delete(int id) {
         try {
             String sql = "delete from tbl_Client where fld_ClientID = ?";
-            CRUD.update(sql,id);
+            CRUD.update(sql, id);
             System.out.println("Delete database table Client is successful!");
         } catch (Exception e) {
             e.printStackTrace();

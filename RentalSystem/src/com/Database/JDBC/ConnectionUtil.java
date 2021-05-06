@@ -2,7 +2,6 @@ package com.Database.JDBC;
 
 import org.junit.Test;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
@@ -15,14 +14,6 @@ import java.util.Properties;
  * @ Version
  */
 public class ConnectionUtil {
-    @Test
-    public void testGetconnection() throws Exception {
-        Connection connection = ConnectionUtil.getConnection();
-        ConnectionUtil.closeConnection(connection);
-
-    }
-
-
     public static Connection getConnection() throws Exception {
         InputStream is = ClassLoader.getSystemClassLoader().getResourceAsStream("jdbc.properties");
         Properties pros = new Properties();
@@ -41,9 +32,9 @@ public class ConnectionUtil {
 
     }
 
-    public static void closeConnection(Connection connection){
-        try{
-            if(connection != null) {
+    public static void closeConnection(Connection connection) {
+        try {
+            if (connection != null) {
                 connection.close();
                 System.out.println("the connection has been closed ! ");
             }
@@ -52,8 +43,7 @@ public class ConnectionUtil {
         }
     }
 
-
-    public static void closeConAndPS(Connection connection, Statement preparedStatement){
+    public static void closeConAndPS(Connection connection, Statement preparedStatement) {
         try {
             if (preparedStatement != null) {
                 preparedStatement.close();
@@ -61,8 +51,8 @@ public class ConnectionUtil {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        try{
-            if(connection != null) {
+        try {
+            if (connection != null) {
                 connection.close();
             }
         } catch (SQLException throwables) {
@@ -70,9 +60,7 @@ public class ConnectionUtil {
         }
     }
 
-
-
-    public static void closeConPSAndRS(Connection connection, Statement preparedStatement, ResultSet resultSet){
+    public static void closeConPSAndRS(Connection connection, Statement preparedStatement, ResultSet resultSet) {
         try {
             if (preparedStatement != null) {
                 preparedStatement.close();
@@ -80,19 +68,26 @@ public class ConnectionUtil {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        try{
-            if(connection != null) {
+        try {
+            if (connection != null) {
                 connection.close();
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        try{
-            if(resultSet != null) {
+        try {
+            if (resultSet != null) {
                 resultSet.close();
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    @Test
+    public void testGetconnection() throws Exception {
+        Connection connection = ConnectionUtil.getConnection();
+        ConnectionUtil.closeConnection(connection);
+
     }
 }

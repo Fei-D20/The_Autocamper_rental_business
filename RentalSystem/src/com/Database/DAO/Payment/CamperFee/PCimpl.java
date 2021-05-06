@@ -9,7 +9,7 @@ import com.Domain.Payment.CamperFee.PriceCategories;
  * @ Description
  * @ Version
  */
-public class PCimpl implements PriceCategoriesDao{
+public class PCimpl implements PriceCategoriesDao {
     @Override
     public void add(PriceCategories priceCategories) {
 

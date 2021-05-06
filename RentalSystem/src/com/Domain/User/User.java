@@ -11,7 +11,7 @@ import com.Domain.Product.Reservation;
  * @ Description
  * @ Version
  */
-public class User implements IF_User{
+public class User implements IF_User {
     @Override
     public boolean login() {
         return false;

@@ -10,7 +10,7 @@ import java.util.Objects;
  * @ Description
  * @ Version
  */
-public class Camper implements IF_Camper{
+public class Camper implements IF_Camper {
     private int camperID;
     private int categoryID;
     private String camperType;

@@ -13,7 +13,7 @@ import org.junit.Test;
  */
 public class BankDaoImpl implements BankDao {
     @Test
-    public void testAddBank(){
+    public void testAddBank() {
         Bank bank1 = new Bank();
         bank1.setFld_BankID(5);
         bank1.setFld_BankName("EASVBank");
@@ -23,7 +23,7 @@ public class BankDaoImpl implements BankDao {
     }
 
     @Test
-    public void testDeleteGet(){
+    public void testDeleteGet() {
         getInstance(5);
         delete(5);
         getAll();
@@ -46,7 +46,7 @@ public class BankDaoImpl implements BankDao {
     public void update(Bank bank) {
         try {
             String sql = "update tbl_Bank set fld_BankName = ? where fld_BankID = ? ";
-            CRUD.update(sql,bank.getFld_BankName(),bank.getFld_BankID());
+            CRUD.update(sql, bank.getFld_BankName(), bank.getFld_BankID());
             System.out.println("update finished");
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,7 +57,7 @@ public class BankDaoImpl implements BankDao {
     public void delete(int id) {
         try {
             String sql = " delete from tbl_Bank where fld_BankID = ? ";
-            CRUD.update(sql,id);
+            CRUD.update(sql, id);
             System.out.println("delete finished");
         } catch (Exception e) {
             e.printStackTrace();

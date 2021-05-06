@@ -9,7 +9,7 @@ import java.util.Date;
  * @ Description
  * @ Version
  */
-public class Week implements IF_Week{
+public class Week implements IF_Week {
     Date startDate;
     Date endDate;
     int weekAmount;

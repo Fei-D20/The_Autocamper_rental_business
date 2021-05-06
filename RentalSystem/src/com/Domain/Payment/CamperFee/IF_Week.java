@@ -11,6 +11,8 @@ import java.util.Date;
  */
 public interface IF_Week {
     public int getWeekAmount(Date startDate, Date endDate);
+
     public Date transToStartSaturday(Date startDate);
+
     public Date transToEndSaturday(Date endDate);
 }

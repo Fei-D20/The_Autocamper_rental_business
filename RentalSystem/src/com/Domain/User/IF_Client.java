@@ -7,5 +7,5 @@ package com.Domain.User;
  * @ Description
  * @ Version
  */
-public interface IF_Client extends IF_User{
+public interface IF_Client extends IF_User {
 }

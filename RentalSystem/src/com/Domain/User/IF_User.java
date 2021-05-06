@@ -14,13 +14,21 @@ import com.Domain.Product.Reservation;
  */
 public interface IF_User {
     public boolean login();
+
     public boolean logout();
+
     public User register();
+
     public User modifyInfo();
+
     public Reservation reserve();
+
     public boolean cancelReservation();
+
     public Payment getPayment();
+
     public Invoice getInvoice();
+
     public Reservation extendReservation();
 
 }

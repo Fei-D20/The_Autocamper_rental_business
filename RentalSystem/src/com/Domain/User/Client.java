@@ -9,7 +9,7 @@ import java.util.Objects;
  * @ Description
  * @ Version
  */
-public class Client extends User implements IF_Client{
+public class Client extends User implements IF_Client {
     private int clientID;
     private int password;
     private String name;

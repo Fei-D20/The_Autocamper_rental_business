@@ -9,9 +9,9 @@ import java.util.Objects;
  * @ Description
  * @ Version
  */
-public class Tank implements IF_Tank{
-    private double tankAmount;
+public class Tank implements IF_Tank {
     private final double FULL_TANK_AMOUNT;
+    private double tankAmount;
 
     public Tank(double FULL_TANK_AMOUNT) {
         this.FULL_TANK_AMOUNT = FULL_TANK_AMOUNT;
@@ -57,7 +57,7 @@ public class Tank implements IF_Tank{
 
     @Override
     public boolean checkFullTank() {
-        if(getFULL_TANK_AMOUNT() - getTankAmount() == 0){
+        if (getFULL_TANK_AMOUNT() - getTankAmount() == 0) {
             return true;
         }
         return false;

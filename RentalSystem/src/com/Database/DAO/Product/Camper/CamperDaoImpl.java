@@ -2,12 +2,7 @@ package com.Database.DAO.Product.Camper;
 
 import com.Database.JDBC.CRUD;
 import com.Domain.Product.Camper.Camper;
-import com.Domain.Product.Camper.Mile;
-import com.Domain.Product.Camper.Tank;
-import org.junit.Test;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -17,8 +12,8 @@ import java.util.Date;
  * @ Description
  * @ Version
  */
-public class CamperDaoImpl implements CamperDao{
-//    @Test
+public class CamperDaoImpl implements CamperDao {
+    //    @Test
 //    public void testAdd() throws ParseException {
 //        CamperDaoImpl camperDao = new CamperDaoImpl();
 //
@@ -78,7 +73,7 @@ public class CamperDaoImpl implements CamperDao{
 //        }
 
         try {
-            CRUD.update(sql,camperID,date,camperType,categoryID,tankStatue);
+            CRUD.update(sql, camperID, date, camperType, categoryID, tankStatue);
         } catch (Exception e) {
             e.printStackTrace();
         }

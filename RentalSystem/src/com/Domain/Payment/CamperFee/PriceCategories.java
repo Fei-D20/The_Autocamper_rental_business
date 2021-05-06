@@ -8,7 +8,7 @@ package com.Domain.Payment.CamperFee;
  * @ Version
  */
 public enum PriceCategories {
-    Luxury(2999),Standard(1999),Basic(999);
+    Luxury(2999), Standard(1999), Basic(999);
 
     private double price;
 

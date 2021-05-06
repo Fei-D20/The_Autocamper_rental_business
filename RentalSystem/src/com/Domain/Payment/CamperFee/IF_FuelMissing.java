@@ -7,5 +7,5 @@ package com.Domain.Payment.CamperFee;
  * @ Description
  * @ Version
  */
-public interface IF_FuelMissing extends IF_CamperFee{
+public interface IF_FuelMissing extends IF_CamperFee {
 }

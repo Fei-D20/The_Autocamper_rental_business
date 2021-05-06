@@ -2,13 +2,11 @@ package com.UI.ClientUI;
 
 import com.APP.Controller.Client.Controller_ClientRegister;
 import com.APP.Controller.console.Controller_FrontPage;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 
 /**
  * @ author Fei Gu
@@ -18,7 +16,7 @@ import javafx.stage.Stage;
  * @ Version
  */
 public class UI_ClientFrontPage {
-    public static Pane clientFrontPage(Pane pane){
+    public static Pane clientFrontPage(Pane pane) {
         Label label = new Label("Are you a new friend ? ");
         label.setLayoutX(200);
         label.setLayoutY(200);
@@ -45,10 +43,10 @@ public class UI_ClientFrontPage {
         goBack.setLayoutX(200);
         goBack.setLayoutY(500);
 
-        goBack.addEventHandler(MouseEvent.MOUSE_CLICKED,new Controller_FrontPage().gotoFrontPage(pane));
+        goBack.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_FrontPage().gotoFrontPage(pane));
 
         AnchorPane anchorPane = new AnchorPane();
-        anchorPane.getChildren().setAll(label,userRegister,userLogIn,goBack);
+        anchorPane.getChildren().setAll(label, userRegister, userLogIn, goBack);
 
 
         return anchorPane;

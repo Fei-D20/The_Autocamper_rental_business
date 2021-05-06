@@ -9,6 +9,6 @@ import com.Domain.Product.Camper.Mile;
  * @ Description
  * @ Version
  */
-public interface IF_MileFee extends IF_CamperFee{
+public interface IF_MileFee extends IF_CamperFee {
     public Mile checkMile();
 }

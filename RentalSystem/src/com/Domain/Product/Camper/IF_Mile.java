@@ -9,5 +9,6 @@ package com.Domain.Product.Camper;
  */
 public interface IF_Mile {
     public boolean checkFreeMile();
+
     public double getRestAmount();
 }

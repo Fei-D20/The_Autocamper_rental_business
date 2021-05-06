@@ -9,10 +9,10 @@ import java.util.Objects;
  * @ Description
  * @ Version
  */
-public class Mile implements IF_Mile{
+public class Mile implements IF_Mile {
     private final double FREE_MILEAGE = 1000;
-    private double mileAmount;
     private final String UNIT = "Km";
+    private double mileAmount;
 
 
     public Mile() {
@@ -62,7 +62,7 @@ public class Mile implements IF_Mile{
 
     @Override
     public boolean checkFreeMile() {
-        if(getMileAmount() - getFREE_MILEAGE() > 0){
+        if (getMileAmount() - getFREE_MILEAGE() > 0) {
             return true;
         }
         return false;

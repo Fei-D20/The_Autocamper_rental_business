@@ -6,13 +6,9 @@ import com.Module.Register.RegisterClient;
 import com.UI.ClientUI.UI_ClientFrontPage;
 import com.UI.ClientUI.UI_ClientRegister;
 import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-
-import java.util.function.Consumer;
 
 /**
  * @ author Fei Gu
@@ -23,19 +19,19 @@ import java.util.function.Consumer;
  */
 public class Controller_ClientRegister {
 
-    public EventHandler<MouseEvent> gotoClientRegister(Pane pane){
+    public EventHandler<MouseEvent> gotoClientRegister(Pane pane) {
         EventHandler<MouseEvent> mouseEventEventHandler = event -> pane.getChildren().setAll(UI_ClientRegister.clientRegisterPage(pane));
 
         return mouseEventEventHandler;
     }
 
-    public EventHandler<MouseEvent> gotoClientFrontPage(Pane pane){
+    public EventHandler<MouseEvent> gotoClientFrontPage(Pane pane) {
         EventHandler<MouseEvent> mouseEventEventHandler = event -> pane.getChildren().setAll(UI_ClientFrontPage.clientFrontPage(pane));
 
         return mouseEventEventHandler;
     }
 
-    public EventHandler<MouseEvent> ClientRegister(Client client){
+    public EventHandler<MouseEvent> ClientRegister(Client client) {
         EventHandler<MouseEvent> mouseEventEventHandler = event -> {
             RegisterClient.setNewClientID();
             ClientDaoImpl clientDao = new ClientDaoImpl();
@@ -51,7 +47,7 @@ public class Controller_ClientRegister {
     }
 
 
-    public ChangeListener<String> clientRegisterName(){
+    public ChangeListener<String> clientRegisterName() {
         ChangeListener<String> changeListener = (observable, oldValue, newValue) -> {
             RegisterClient.getNewClient().setName(newValue);
             System.out.println(newValue);
@@ -59,7 +55,7 @@ public class Controller_ClientRegister {
         return changeListener;
     }
 
-    public ChangeListener<String> clientRegisterPassWord(){
+    public ChangeListener<String> clientRegisterPassWord() {
         ChangeListener<String> changeListener = (observable, oldValue, newValue) -> {
             RegisterClient.getNewClient().setPassword(Integer.parseInt(newValue));
             System.out.println(newValue);
@@ -67,7 +63,7 @@ public class Controller_ClientRegister {
         return changeListener;
     }
 
-    public ChangeListener<String> clientRegisterAddress(){
+    public ChangeListener<String> clientRegisterAddress() {
         ChangeListener<String> changeListener = (observable, oldValue, newValue) -> {
             RegisterClient.getNewClient().setAddress(newValue);
             System.out.println(newValue);
@@ -75,7 +71,7 @@ public class Controller_ClientRegister {
         return changeListener;
     }
 
-    public ChangeListener<String> clientRegisterEmail(){
+    public ChangeListener<String> clientRegisterEmail() {
         ChangeListener<String> changeListener = (observable, oldValue, newValue) -> {
             RegisterClient.getNewClient().setEmail(newValue);
             System.out.println(newValue);
@@ -83,14 +79,13 @@ public class Controller_ClientRegister {
         return changeListener;
     }
 
-    public ChangeListener<String> clientRegisterPhoneNo(){
+    public ChangeListener<String> clientRegisterPhoneNo() {
         ChangeListener<String> changeListener = (observable, oldValue, newValue) -> {
             RegisterClient.getNewClient().setPhoneNo(Integer.parseInt(newValue));
             System.out.println(newValue);
         };
         return changeListener;
     }
-
 
 
 }
