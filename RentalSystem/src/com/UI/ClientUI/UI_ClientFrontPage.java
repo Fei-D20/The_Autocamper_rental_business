@@ -18,7 +18,7 @@ import javafx.stage.Stage;
  * @ Version
  */
 public class UI_ClientFrontPage {
-    public static Stage clientFrontPage(Stage stage){
+    public static Pane clientFrontPage(Pane pane){
         Label label = new Label("Are you a new friend ? ");
         label.setLayoutX(200);
         label.setLayoutY(200);
@@ -31,7 +31,7 @@ public class UI_ClientFrontPage {
         userRegister.setLayoutX(200);
         userRegister.setLayoutY(300);
 
-        userRegister.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_ClientRegister().gotoClientRegister(stage));
+        userRegister.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_ClientRegister().gotoClientRegister(pane));
 
         Button userLogIn = new Button(" Log in ");
         userLogIn.setPrefHeight(50);
@@ -45,14 +45,12 @@ public class UI_ClientFrontPage {
         goBack.setLayoutX(200);
         goBack.setLayoutY(500);
 
-        goBack.addEventHandler(MouseEvent.MOUSE_CLICKED,new Controller_FrontPage().gotoFrontPage(stage));
+        goBack.addEventHandler(MouseEvent.MOUSE_CLICKED,new Controller_FrontPage().gotoFrontPage(pane));
 
         AnchorPane anchorPane = new AnchorPane();
         anchorPane.getChildren().setAll(label,userRegister,userLogIn,goBack);
 
-        Pane pane = new Pane(anchorPane);
-        Scene scene = new Scene(pane, 600, 800);
-        stage.setScene(scene);
-        return stage;
+
+        return anchorPane;
     }
 }

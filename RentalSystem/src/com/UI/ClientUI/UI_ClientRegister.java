@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  */
 public class UI_ClientRegister {
 
-    public static Stage clientRegisterPage(Stage stage){
+    public static GridPane clientRegisterPage(Pane pane){
 
         Label l_registerPageTitle = new Label("New Client Register");
         l_registerPageTitle.setStyle("-fx-font-size: 20");
@@ -80,10 +80,13 @@ public class UI_ClientRegister {
         register.addEventHandler(MouseEvent.MOUSE_CLICKED,new Controller_ClientRegister().ClientRegister(RegisterClient.getNewClient()));
 
         Button go_back = new Button("Go back");
+        go_back.addEventHandler(MouseEvent.MOUSE_CLICKED,new Controller_ClientRegister().gotoClientFrontPage(pane));
 
 
         GridPane gridPane = new GridPane();
         gridPane.setStyle("-fx-background-color: lightgray");
+        gridPane.setPrefHeight(800);
+        gridPane.setPrefWidth(600);
 
         gridPane.add(l_registerPageTitle,0,0);
 
@@ -115,8 +118,6 @@ public class UI_ClientRegister {
         gridPane.setVgap(10);
         gridPane.setAlignment(Pos.CENTER);
 
-        Scene scene = new Scene(gridPane, 600, 800);
-        stage.setScene(scene);
-        return stage;
+        return gridPane;
     }
 }

@@ -15,11 +15,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 import javafx.stage.Stage;
+import sun.nio.ch.sctp.SctpNet;
 
 
 public class UI_FrontPage {
 
-    public static Stage showFrontPage(Stage stage) {
+    public static Pane showFrontPage(Pane pane) {
 
         Label label = new Label("Please choose User Category : ");
         label.setLayoutX(200);
@@ -33,7 +34,7 @@ public class UI_FrontPage {
         client.setLayoutX(200);
         client.setLayoutY(300);
 
-        client.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_FrontPage().gotoClientFrontPage(stage));
+        client.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_FrontPage().gotoClientFrontPage(pane));
 
 
         Button administrator = new Button(" Administrator ");
@@ -46,11 +47,6 @@ public class UI_FrontPage {
         anchorPane.getChildren().setAll(label,client,administrator);
 
 
-        Pane pane = new Pane();
-        pane.getChildren().setAll(anchorPane);
-        Scene scene = new Scene(pane,600,800);
-        stage.setScene(scene);
-        stage.setTitle("Auto Camper Rent System ");
-        return stage;
+        return anchorPane;
     }
 }
