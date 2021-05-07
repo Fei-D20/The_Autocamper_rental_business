@@ -7,10 +7,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 /**
- * @ author Fei Gu
+ * @ author Andrej Simionenko, Raheela Tasneem, Fei Gu
  * @ create 2021-05-04-10.41
  * @ grade CS20_EASV_SØNDERBORG
- * @ Description
+ * @ Description this is the controller for from front page to next page and go back
  * @ Version
  */
 public class Controller_FrontPage {
