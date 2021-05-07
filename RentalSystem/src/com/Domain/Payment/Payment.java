@@ -7,5 +7,5 @@ package com.Domain.Payment;
  * @ Description
  * @ Version
  */
-public class Payment {
+public class Payment implements IF_Payment{
 }

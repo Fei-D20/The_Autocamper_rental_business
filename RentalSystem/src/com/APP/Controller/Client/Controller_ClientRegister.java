@@ -31,7 +31,7 @@ public class Controller_ClientRegister {
         return mouseEventEventHandler;
     }
 
-    public EventHandler<MouseEvent> ClientRegister(Client client) {
+    public EventHandler<MouseEvent> clientRegister(Client client) {
         EventHandler<MouseEvent> mouseEventEventHandler = event -> {
             RegisterClient.setNewClientID();
             ClientDaoImpl clientDao = new ClientDaoImpl();

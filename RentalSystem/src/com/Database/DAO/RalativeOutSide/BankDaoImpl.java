@@ -15,8 +15,8 @@ public class BankDaoImpl implements BankDao {
     @Test
     public void testAddBank() {
         Bank bank1 = new Bank();
-        bank1.setFld_BankID(5);
-        bank1.setFld_BankName("EASVBank");
+        bank1.setBankID(5);
+        bank1.setBankName("EASVBank");
 
         add(bank1);
 //        getAll();
@@ -34,7 +34,7 @@ public class BankDaoImpl implements BankDao {
     public void add(Bank bank) {
         try {
             String sql = "INSERT INTO tbl_Bank(fld_BankID,fld_BankName) values (?,?) ";
-            CRUD.update(sql, bank.getFld_BankID(), bank.getFld_BankName());
+            CRUD.update(sql, bank.getBankID(), bank.getBankName());
             System.out.println("Insert finished");
         } catch (Exception e) {
             e.printStackTrace();
@@ -46,7 +46,7 @@ public class BankDaoImpl implements BankDao {
     public void update(Bank bank) {
         try {
             String sql = "update tbl_Bank set fld_BankName = ? where fld_BankID = ? ";
-            CRUD.update(sql, bank.getFld_BankName(), bank.getFld_BankID());
+            CRUD.update(sql, bank.getBankName(), bank.getBankID());
             System.out.println("update finished");
         } catch (Exception e) {
             e.printStackTrace();

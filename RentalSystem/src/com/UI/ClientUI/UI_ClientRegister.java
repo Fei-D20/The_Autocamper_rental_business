@@ -72,7 +72,7 @@ public class UI_ClientRegister {
 
 
         Button register = new Button("Register");
-        register.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_ClientRegister().ClientRegister(RegisterClient.getNewClient()));
+        register.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_ClientRegister().clientRegister(RegisterClient.getNewClient()));
 
         Button go_back = new Button("Go back");
         go_back.addEventHandler(MouseEvent.MOUSE_CLICKED, new Controller_ClientRegister().gotoClientFrontPage(pane));

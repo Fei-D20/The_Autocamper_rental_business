@@ -14,31 +14,31 @@ import java.util.Objects;
  * this is the information about the bank which the client choose to trans the payment.
  */
 public class Bank {
-    private int fld_BankID;
-    private String fld_BankName;
+    private int bankID;
+    private String bankName;
 
     public Bank() {
     }
 
-    public Bank(int bankID, String fld_BankName) {
-        this.fld_BankID = bankID;
-        this.fld_BankName = fld_BankName;
+    public Bank(int bankID, String bankName) {
+        this.bankID = bankID;
+        this.bankName = bankName;
     }
 
-    public int getFld_BankID() {
-        return fld_BankID;
+    public int getBankID() {
+        return bankID;
     }
 
-    public void setFld_BankID(int fld_BankID) {
-        this.fld_BankID = fld_BankID;
+    public void setBankID(int bankID) {
+        this.bankID = bankID;
     }
 
-    public String getFld_BankName() {
-        return fld_BankName;
+    public String getBankName() {
+        return bankName;
     }
 
-    public void setFld_BankName(String fld_BankName) {
-        this.fld_BankName = fld_BankName;
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
     }
 
     @Override
@@ -46,19 +46,19 @@ public class Bank {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bank bank = (Bank) o;
-        return fld_BankID == bank.fld_BankID && Objects.equals(fld_BankName, bank.fld_BankName);
+        return bankID == bank.bankID && Objects.equals(bankName, bank.bankName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fld_BankID, fld_BankName);
+        return Objects.hash(bankID, bankName);
     }
 
     @Override
     public String toString() {
         return "Bank{" +
-                "bankID=" + fld_BankID +
-                ", bankName='" + fld_BankName + '\'' +
+                "bankID=" + bankID +
+                ", bankName='" + bankName + '\'' +
                 '}';
     }
 }

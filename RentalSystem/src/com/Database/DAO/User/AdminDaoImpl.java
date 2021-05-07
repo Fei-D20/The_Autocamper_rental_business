@@ -1,22 +1,22 @@
-package com.Database.DAO.Payment.CamperFee;
+package com.Database.DAO.User;
 
-import com.Domain.Payment.CamperFee.PriceCategories;
+import com.Domain.User.Admin;
 
 /**
  * @ author Fei Gu
- * @ create 2021-05-04-11.46
+ * @ create 2021-05-07-00.13
  * @ grade CS20_EASV_SØNDERBORG
  * @ Description
  * @ Version
  */
-public class PCimpl implements PriceCategoriesDao {
+public class AdminDaoImpl implements AdminDao{
     @Override
-    public void add(PriceCategories priceCategories) {
+    public void add(Admin admin) {
 
     }
 
     @Override
-    public void update(PriceCategories priceCategories) {
+    public void update(Admin admin) {
 
     }
 
@@ -27,6 +27,7 @@ public class PCimpl implements PriceCategoriesDao {
 
     @Override
     public void getInstance(int id) {
+
     }
 
     @Override
