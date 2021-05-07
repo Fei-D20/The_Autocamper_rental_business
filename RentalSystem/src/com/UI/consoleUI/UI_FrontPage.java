@@ -1,8 +1,9 @@
-package com.UI.consoleUI;/**
- * @ author Fei Gu
+package com.UI.consoleUI;
+/**
+ * @ author Andrej Simionenko, Raheela Tasneem, Fei Gu
  * @ create 2021-05-04-09.52
  * @ grade CS20_EASV_SØNDERBORG
- * @ Description
+ * @ Description this is the front page about the application
  * @ Version
  */
 
@@ -16,6 +17,11 @@ import javafx.scene.layout.Pane;
 
 public class UI_FrontPage {
 
+    /**
+     * this is show the front page
+     * @param pane the root of Pane
+     * @return new pane
+     */
     public static Pane showFrontPage(Pane pane) {
 
         Label label = new Label("Please choose User Category : ");

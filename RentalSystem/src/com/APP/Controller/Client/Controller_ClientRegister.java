@@ -11,26 +11,41 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 /**
- * @ author Fei Gu
+ * @ author Andrej Simionenko, Raheela Tasneem, Fei Gu
  * @ create 2021-05-04-14.34
  * @ grade CS20_EASV_SØNDERBORG
- * @ Description
+ * @ Description this is the controller base on the ui Client register page
  * @ Version
  */
 public class Controller_ClientRegister {
 
+    /**
+     * goto the client register page
+     * @param pane client front page
+     * @return action
+     */
     public EventHandler<MouseEvent> gotoClientRegister(Pane pane) {
         EventHandler<MouseEvent> mouseEventEventHandler = event -> pane.getChildren().setAll(UI_ClientRegister.clientRegisterPage(pane));
 
         return mouseEventEventHandler;
     }
 
+    /**
+     * go back to client front page
+     * @param pane client front page
+     * @return action
+     */
     public EventHandler<MouseEvent> gotoClientFrontPage(Pane pane) {
         EventHandler<MouseEvent> mouseEventEventHandler = event -> pane.getChildren().setAll(UI_ClientFrontPage.clientFrontPage(pane));
 
         return mouseEventEventHandler;
     }
 
+    /**
+     * this is the methods rigister new client
+     * @param client
+     * @return
+     */
     public EventHandler<MouseEvent> clientRegister(Client client) {
         EventHandler<MouseEvent> mouseEventEventHandler = event -> {
             RegisterClient.setNewClientID();

@@ -11,14 +11,19 @@ import javafx.scene.text.Font;
 
 
 /**
- * @ author Fei Gu
+ * @ author Andrej Simionenko, Raheela Tasneem, Fei Gu
  * @ create 2021-05-04-14.40
  * @ grade CS20_EASV_SØNDERBORG
- * @ Description
+ * @ Description this is the register page for client
  * @ Version
  */
 public class UI_ClientRegister {
 
+    /**
+     * this method show the reigter page for client
+     * @param pane the pane from Client front page
+     * @return the new pane by client register page
+     */
     public static GridPane clientRegisterPage(Pane pane) {
 
         Label l_registerPageTitle = new Label("New Client Register");

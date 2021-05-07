@@ -9,13 +9,18 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 /**
- * @ author Fei Gu
+ * @ author Andrej Simionenko, Raheela Tasneem, Fei Gu
  * @ create 2021-05-04-11.08
  * @ grade CS20_EASV_SØNDERBORG
- * @ Description
+ * @ Description this is the front page for Client which include Client register and login
  * @ Version
  */
 public class UI_ClientFrontPage {
+    /**
+     * show the client front page
+     * @param pane the root pane
+     * @return new pane which is the client front page
+     */
     public static Pane clientFrontPage(Pane pane) {
         Label label = new Label("Are you a new friend ? ");
         label.setLayoutX(200);

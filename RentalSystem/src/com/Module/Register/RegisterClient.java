@@ -3,10 +3,10 @@ package com.Module.Register;
 import com.Domain.User.Client;
 
 /**
- * @ author Fei Gu
+ * @ author Andrej Simionenko, Raheela Tasneem, Fei Gu
  * @ create 2021-05-05-10.56
  * @ grade CS20_EASV_SØNDERBORG
- * @ Description
+ * @ Description this is the singleton patten to make only one client when we need insert new client though the UI
  * @ Version
  */
 public class RegisterClient {
