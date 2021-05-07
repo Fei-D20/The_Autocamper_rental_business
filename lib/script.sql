@@ -1,3 +1,17 @@
+create DB_AutocamperRental
+go
+
+use DB_AutocamperRental
+
+create table tbl_Admin
+(
+    fld_AdminID       int not null
+        constraint tbl_Admin_pk
+            primary key nonclustered,
+    fld_AdminPassword int
+)
+go
+
 create table tbl_Bank
 (
     fld_BankID   int not null
@@ -16,25 +30,6 @@ create table tbl_BookingReservation
 )
 go
 
-create table tbl_CLIENT
-(
-    fld_ClientID                       int         not null
-        primary key,
-    fld_Name                           varchar(30) not null,
-    fld_Address                        varchar(80) not null,
-    fld_EmailAddress                   varchar(30) not null,
-    fld_PhoneNo                        int         not null,
-    fld_DriveLicenseNo                 int         not null,
-    fld_DriverFullDrivingLicenseStatue varchar(10),
-    fld_CoDriverName                   int,
-    fld_CoDriverLicenseNo              int,
-    fld_RentalTimes                    int,
-    fld_BankID                         int
-        references tbl_Bank,
-    fld_AccountNo                      int
-)
-go
-
 create table tbl_CamperType
 (
     fld_CamperType        varchar(30) not null
@@ -43,6 +38,25 @@ create table tbl_CamperType
     fld_HeatingFacility   int,
     fld_SpaceAvailable    int,
     fld_KitchenFacilities varchar(100)
+)
+go
+
+create table tbl_Client
+(
+    fld_ClientID                       int         not null
+        primary key,
+    fld_Name                           varchar(30) not null,
+    fld_Address                        varchar(80) not null,
+    fld_EmailAddress                   varchar(30) not null,
+    fld_PhoneNo                        int         not null,
+    fld_DriveLicenseNo                 int,
+    fld_DriverFullDrivingLicenseStatue varchar(10),
+    fld_CoDriverName                   int,
+    fld_CoDriverLicenseNo              int,
+    fld_RentalTimes                    int,
+    fld_BankID                         int
+        references tbl_Bank,
+    fld_AccountNo                      int
 )
 go
 
@@ -108,7 +122,7 @@ create table tbl_Payment
     fld_OrderID             int
         references tbl_BookingReservation,
     fld_ClientID            int
-        references tbl_CLIENT,
+        references tbl_CLIENT (fld_ClientID),
     fld_RentalID            int
         references tbl_Rental,
     fld_InsuranceID         int
