@@ -149,4 +149,7 @@ public class CRUD {
         String sql = "select * from tbl_Bank";
         getTable(sql);
     }
+
+
+
 }
