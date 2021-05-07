@@ -1,8 +1,8 @@
 /**
- * @ author Fei Gu
+ * @ author Andrej Simionenko, Raheela Tasneem, Fei Gu
  * @ create 2021-05-04-22.07
  * @ grade CS20_EASV_SØNDERBORG
- * @ Description
+ * @ Description This is the mean entry for the hole application.
  * @ Version
  */
 
